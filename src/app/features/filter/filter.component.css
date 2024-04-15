@@ -1,0 +1,17 @@
+.filter{
+    background-color: #666666;
+    .filter-fields{
+        padding: 2rem;
+        display: flex;
+        .filter-field{
+            padding: 0.5rem;
+        }
+    }
+    .filter-buttons{
+        display: flex;
+        flex-direction: row-reverse;
+        .filter-button{
+            margin: 1rem;
+        }
+    }
+}

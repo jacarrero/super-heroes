@@ -1,0 +1,5 @@
+.edit {
+    background-color: #666666;
+    display: flex;
+    flex-direction: column;
+}

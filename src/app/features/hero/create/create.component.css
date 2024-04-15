@@ -1,0 +1,9 @@
+.create {
+    background-color: #666666;
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
