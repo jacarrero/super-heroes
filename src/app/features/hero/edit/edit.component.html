@@ -4,7 +4,7 @@
             <div>
                 <mat-form-field  appearance="outline">
                     <mat-label>Nombre</mat-label>
-                    <input formControlName="name" matInput>
+                    <input formControlName="name" matInput oninput="this.value = this.value.toUpperCase()">
                 </mat-form-field>
             </div>
             <div>
@@ -28,8 +28,8 @@
             </div>
         </div>
         <div>
-            <a mat-stroked-button color="primary"  (click)="navigateToHome()">Volver</a>
-            <button class="filter-button" mat-raised-button color="primary" type="submit">Editar</button>
+            <a mat-stroked-button color="primary" class="edit-button"  (click)="navigateToHome()">Volver</a>
+            <button class="edit-button" mat-raised-button color="primary" type="submit">Editar</button>
         </div>
         
     </form>

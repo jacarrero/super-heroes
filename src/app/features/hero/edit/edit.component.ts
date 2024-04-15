@@ -55,7 +55,7 @@ export class EditComponent {
         this.hero = hero;
         this.editHeroForm.patchValue({
           id: heroId,
-          name: hero.name,
+          name: hero.name.toUpperCase(),
           age: hero.age,
           city: hero.city,
           fly: hero.fly

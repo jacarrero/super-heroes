@@ -19,7 +19,7 @@
                     <input formControlName="city" matInput>
                 </mat-form-field>
             </div>
-            <div class="filter-field">
+            <div class="filter-field fly">
                 <mat-label for="fly">Vuela:</mat-label>
                 <mat-radio-group formControlName="fly" id="fly" appearance="outline">
                     <mat-radio-button [value]="true">Si</mat-radio-button>
@@ -28,9 +28,13 @@
             </div>
         </div>
         <div class="filter-buttons">
-            <button class="filter-button" mat-raised-button color="primary" (click)="navigateToCreateHero()">Crear héroe</button>
-            <button class="filter-button" mat-raised-button color="primary" type="submit">Buscar</button>
-            <button class="filter-button" mat-flat-button color="warn" (click)="reset()">Limpiar</button>
+            <div class="left">
+                <button class="filter-button" mat-raised-button color="primary" (click)="navigateToCreateHero()">Crear héroe</button>
+            </div>
+            <div class="right">
+                <button class="filter-button" mat-flat-button color="warn" (click)="reset()">Limpiar</button>
+                <button class="filter-button" mat-raised-button color="primary" type="submit">Buscar</button>
+            </div>
         </div>
     </form>
 </section>

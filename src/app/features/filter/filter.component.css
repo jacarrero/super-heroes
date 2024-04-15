@@ -1,15 +1,28 @@
 .filter{
-    background-color: #666666;
+    background-color: #fafafa;
     .filter-fields{
         padding: 2rem;
         display: flex;
+        align-items: center;
+        justify-content: center;
         .filter-field{
             padding: 0.5rem;
+        }
+        .filter-field.fly{
+            display: flex;
+            flex-direction: column;
         }
     }
     .filter-buttons{
         display: flex;
-        flex-direction: row-reverse;
+        .right{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        .left{
+            width: 50%;
+        }
         .filter-button{
             margin: 1rem;
         }

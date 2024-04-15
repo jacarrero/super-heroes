@@ -1,7 +1,28 @@
 .create {
-    background-color: #666666;
+    background-color: #fafafa;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+.create-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.create-button {
+    margin-left: 1rem;
+}
+
+.back-button {
+    display: flex;
+    justify-content: center;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
