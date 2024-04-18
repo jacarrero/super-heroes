@@ -1,28 +1,38 @@
 # SuperHeroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+El proyecto ha sido creado con:
+ - [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+ - [NGRX](https://ngrx.io/) Control de estados.
+ - [Angular Standalone Components](https://angular.io/guide/standalone-components) version 17.3.3.
+ - [JEST](https://jestjs.io/) test unitarios.
+ - [Angular Material](https://material.angular.io/) librería de componentes angular material.
+ - [Reactive programming](https://angular.io/guide/rx-library) programación reactiva.
 
 ## Development server
+Para ejecutar el proyecto por primera vez usar (este comando sólo lanzar la primera vez que se ejecuta el proyecto):`npm i` 
+Una vez instaladas las dependencias usar el comando: `npm start` 
+Este comando ejecutará:
+- Prettier para ejecutar todos los archivos y aplicarles el formato
+- Servidor json en el puerto: `http://localhost:3000/` (src/assets/mocks/heroes.json)
+- Navegar a `http://localhost:4200/`. 
+- La aplicación se recargará automáticamente si se hace cualquier cambio en los archivos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Scaffolding
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Comando para generar componentes:
+ ng generate component component-name
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Comando`npm run build` para hacer la build del proyecto.
 
-## Running unit tests
+## Test Unitarios
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Comando `ng test` para ejecutar los test [JEST](https://jestjs.io/).
+El componente "create" es el componente que contiene los test al completo.
 
-## Running end-to-end tests
+# Autor
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# super-heroes
+Jose Alberto Carrero Pérez
+Cualquier duda o mejora contactar en: jacarrero@knowmadmood.com
+Knowmadmood
