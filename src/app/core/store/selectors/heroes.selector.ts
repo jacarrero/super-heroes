@@ -15,12 +15,6 @@ export const selectLoading = createSelector(
     (heroesState) => heroesState.loading
 )
 
-export const selectDataLoadedState = createFeatureSelector<Heroes>('dataLoaded')
-export const selectDataLoaded = createSelector(
-    selectDataLoadedState,
-    (heroesState) => heroesState.dataLoaded
-)
-
 export const selectHeroById = (heroId: string) =>
     createSelector(selectHeroesData, (heroes: Hero[]) =>
         heroes.find((hero) => hero.id === heroId)

@@ -11,13 +11,11 @@ import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { Hero } from '../../../../core/models/hero.model'
 import { HeroesService } from '../../../../core/services/heroes/heroes.service'
-import { SnackbarService } from '../../../../core/services/snackbar/snackbar.service'
 import {
     deleteHero,
     loadHeroesData,
 } from '../../../../core/store/actions/heroes.actions'
 import {
-    selectDataLoaded,
     selectHeroesData,
     selectLoading,
 } from '../../../../core/store/selectors/heroes.selector'
@@ -45,26 +43,20 @@ export class DashboardComponent {
     displayedColumns: string[] = ['name', 'age', 'city', 'fly', 'actions']
     tableData: Hero[] = []
     heroes$: Observable<Hero[]>
-    isLoading$: Observable<boolean>
-    loaded$ = this.store.pipe(select(selectDataLoaded))
+    loading$: Observable<boolean>
     dataSource = new MatTableDataSource()
     constructor(
         private store: Store,
         public dialog: MatDialog,
-        private snackbarService: SnackbarService,
         private router: Router
     ) {
         this.heroes$ = this.store.pipe(select(selectHeroesData))
-        this.isLoading$ = this.store.pipe(select(selectLoading))
+        this.loading$ = this.store.pipe(select(selectLoading))
     }
 
     ngOnInit(): void {
-        this.loaded$.subscribe((loaded) => {
-            if (!loaded) {
-                this.store.dispatch(loadHeroesData())
-            }
-        })
-        this.heroes$.subscribe((data) => (this.dataSource.data = [...data]))
+        this.store.dispatch(loadHeroesData())
+        this.heroes$.subscribe((data) => (this.dataSource.data = [...data]));
     }
 
     openDeleteHeroDialog(hero: Hero) {
@@ -76,10 +68,6 @@ export class DashboardComponent {
             .subscribe((confirm: Boolean) => {
                 if (confirm) {
                     this.store.dispatch(deleteHero({ id: hero.id }))
-                    this.snackbarService.openSnackbar(
-                        'Héroe eliminado correctamente',
-                        'success'
-                    )
                 } else {
                     this.dialog.closeAll()
                 }

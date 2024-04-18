@@ -9,12 +9,12 @@ import { Hero } from '../../models/hero.model'
     providedIn: 'root',
 })
 export class HeroesService {
-    private jsonDataUrl = 'assets/mocks/heroes.json'
+    private mocksUrl = 'http://localhost:3000/heroes'
 
     constructor(private http: HttpClient) {}
 
     getHeroes() {
-        return this.http.get<Hero[]>(this.jsonDataUrl)
+        return this.http.get<Hero[]>(this.mocksUrl)
     }
 
     filterHeroes(filterForm: FilterForm): Observable<Hero[]> {
@@ -56,20 +56,14 @@ export class HeroesService {
     createHero(hero: Hero): Observable<Hero> {
         const newId = uuidv4()
         const newHero: Hero = { ...hero, id: newId }
-        return this.http.post<Hero>(this.jsonDataUrl, newHero)
+        return this.http.post<Hero>(this.mocksUrl, newHero)
     }
 
-    editHero(hero: Hero): Observable<Hero> {
-        return this.http.get<Hero[]>(this.jsonDataUrl).pipe(
-            map((heroes: Hero[]) => {
-                heroes.map((h) => {
-                    if (h.id === hero.id) {
-                        return hero
-                    }
-                    return h
-                })
-                return hero
-            })
-        )
+    editHero(id: string, hero: Hero): Observable<Hero> {
+        return this.http.put<Hero>(`${this.mocksUrl}/${id}`, hero)
+    }
+
+    deleteHero(id: string): Observable<Hero> {
+        return this.http.delete<Hero>(`${this.mocksUrl}/${id}`)
     }
 }

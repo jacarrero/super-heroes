@@ -46,9 +46,34 @@ export class HeroesEffects {
             ),
             tap(() => {
                 this.router.navigate(['/'])
+                this.loadHeroesData$;
                 return of(
                     this.snackbarService.openSnackbar(
                         'Héroe creado exitosamente',
+                        'success'
+                    )
+                )
+            })
+        )
+    )
+
+    deleteHero$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(HeroesActions.deleteHero),
+            mergeMap(({ id }) =>
+                this.heroesService.deleteHero(id).pipe(
+                    map((updatedHero) =>
+                        HeroesActions.deleteHeroSuccess({ hero: updatedHero })
+                    ),
+                    catchError((error) =>
+                        of(HeroesActions.deleteHeroFailure({ error }))
+                    )
+                )
+            ),
+            tap(() => {
+                return of(
+                    this.snackbarService.openSnackbar(
+                        'Héroe eliminado exitosamente',
                         'success'
                     )
                 )
@@ -60,7 +85,7 @@ export class HeroesEffects {
         this.actions$.pipe(
             ofType(HeroesActions.editHero),
             mergeMap(({ hero }) =>
-                this.heroesService.editHero(hero).pipe(
+                this.heroesService.editHero(hero.id, hero).pipe(
                     map((updatedHero) =>
                         HeroesActions.editHeroSuccess({ hero: updatedHero })
                     ),

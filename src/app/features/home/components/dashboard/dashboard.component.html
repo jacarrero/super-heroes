@@ -1,5 +1,5 @@
 <section>
-    @if (!(isLoading$ | async)) {
+    @if (!(loading$ | async)) {
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -32,7 +32,7 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     }
-    @if(isLoading$ | async) {
+    @if(loading$ | async) {
         <div class="loader">
             <mat-spinner></mat-spinner>
         </div>

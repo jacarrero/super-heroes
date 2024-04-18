@@ -4,24 +4,22 @@ import * as HeroesActions from '../actions/heroes.actions'
 
 export interface Heroes {
     heroes: Hero[]
-    originalDataHero: Hero[]
     loading: boolean
-    dataLoaded: boolean
     error: any
 }
 
 const initialState: Heroes = {
     heroes: [],
-    originalDataHero: [],
     loading: false,
-    dataLoaded: false,
     error: null,
 }
 
-
-
 export const heroesReducer = createReducer(
     initialState,
+    on(HeroesActions.initState, (state) => ({
+        ...state,
+        loading: true,
+    })),
     on(HeroesActions.loadHeroesData, (state) => ({
         ...state,
         loading: true,
@@ -31,7 +29,6 @@ export const heroesReducer = createReducer(
         ...state,
         heroes,
         originalDataHero: [...heroes],
-        dataLoaded: true,
         loading: false,
     })),
     on(HeroesActions.loadHeroesFailure, (state, { error }) => ({
@@ -48,8 +45,8 @@ export const heroesReducer = createReducer(
     on(HeroesActions.filterHeros, (state, { filterForm }) => ({
         ...state,
         heroes: Object.values(filterForm).every((value) => value === null)
-            ? state.originalDataHero
-            : state.originalDataHero.filter((hero) => {
+            ? state.heroes
+            : [...state.heroes.filter((hero) => {
                   return (
                       (filterForm?.name &&
                           hero.name
@@ -66,18 +63,12 @@ export const heroesReducer = createReducer(
                               )) ||
                       hero.fly === filterForm.fly
                   )
-              }),
-        loading: false,
-    })),
-    on(HeroesActions.initDataHero, (state) => ({
-        ...state,
-        heroes: [...state.originalDataHero],
+              })],
         loading: false,
     })),
     on(HeroesActions.createHero, (state, { hero }) => ({
         ...state,
-        heroes: [...state.originalDataHero, hero],
-        originalDataHero: [...state.originalDataHero, hero],
+        heroes: [...state.heroes, hero],
         loading: false,
     })),
     on(HeroesActions.editHeroSuccess, (state, { hero }) => ({
@@ -89,11 +80,8 @@ export const heroesReducer = createReducer(
     }))
 )
 
-
 export const storeHeroes = {
     heroes: heroesReducer,
-    originalDataHero: heroesReducer,
     loading: heroesReducer,
-    dataLoaded: heroesReducer,
-    error: heroesReducer
+    error: heroesReducer,
 }
