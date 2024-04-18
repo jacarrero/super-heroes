@@ -7,11 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { Hero } from '../../../core/models/hero.model';
-import { SnackbarService } from '../../../core/services/snackbar/snackbar.service';
-import { editHero } from '../../../core/store/actions/heroes.actions';
-import { State } from '../../../core/store/reducers/heroes.reducer';
-import { selectHeroById } from '../../../core/store/selectors/heroes.selector';
+import { Hero } from '../../../../core/models/hero.model';
+import { SnackbarService } from '../../../../core/services/snackbar/snackbar.service';
+import { editHero } from '../../../../core/store/actions/heroes.actions';
+import { State } from '../../../../core/store/reducers/heroes.reducer';
+import { selectHeroById } from '../../../../core/store/selectors/heroes.selector';
 
 @Component({
   selector: 'app-edit',

@@ -9,13 +9,13 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Hero } from '../../core/models/hero.model';
-import { HeroesService } from '../../core/services/heroes/heroes.service';
-import { SnackbarService } from '../../core/services/snackbar/snackbar.service';
-import { deleteHero, loadHeroesData } from '../../core/store/actions/heroes.actions';
-import { selectDataLoaded, selectHeroesData, selectLoading } from '../../core/store/selectors/heroes.selector';
-import { CapitalizeFirstLetterPipe } from '../../shared/pipes/capitalizeFirstLetter.pipe';
-import { DeleteHeroDialogComponent } from '../dialogs/delete-hero-dialog/delete-hero-dialog.component';
+import { Hero } from '../../../../core/models/hero.model';
+import { HeroesService } from '../../../../core/services/heroes/heroes.service';
+import { SnackbarService } from '../../../../core/services/snackbar/snackbar.service';
+import { deleteHero, loadHeroesData } from '../../../../core/store/actions/heroes.actions';
+import { selectDataLoaded, selectHeroesData, selectLoading } from '../../../../core/store/selectors/heroes.selector';
+import { CapitalizeFirstLetterPipe } from '../../../../shared/pipes/capitalize-first-letter.pipe';
+import { DeleteHeroDialogComponent } from '../../../dialogs/delete-hero-dialog/delete-hero-dialog.component';
 
 @Component({
   selector: 'app-dashboard',

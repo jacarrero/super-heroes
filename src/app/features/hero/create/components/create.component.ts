@@ -7,10 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Hero } from '../../../core/models/hero.model';
-import { HeroesForm } from '../../../core/models/heroes-form.model';
-import { SnackbarService } from '../../../core/services/snackbar/snackbar.service';
-import { createHero } from '../../../core/store/actions/heroes.actions';
+import { Hero } from '../../../../core/models/hero.model';
+import { HeroesForm } from '../../../../core/models/heroes-form.model';
+import { SnackbarService } from '../../../../core/services/snackbar/snackbar.service';
+import { createHero } from '../../../../core/store/actions/heroes.actions';
 
 @Component({
   selector: 'app-create',

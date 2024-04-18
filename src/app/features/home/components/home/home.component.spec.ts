@@ -1,24 +1,25 @@
-import { provideHttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
+import { provideHttpClient } from '@angular/common/http';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
-import { provideState, provideStore } from '@ngrx/store';
+import { StoreModule, provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import 'zone.js/testing';
-import { routes } from '../../../app.routes';
-import { HeroesEffects } from '../../../core/store/effects/heroes.effects';
-import { heroesReducer } from '../../../core/store/reducers/heroes.reducer';
-import { EditComponent } from './edit.component';
+import { routes } from '../../../../app.routes';
+import { HeroesEffects } from '../../../../core/store/effects/heroes.effects';
+import { heroesReducer } from '../../../../core/store/reducers/heroes.reducer';
+import { HomeComponent } from './home.component';
 
-describe('EditComponent', () => {
-  let component: EditComponent;
-  let fixture: ComponentFixture<EditComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        EditComponent
+        HomeComponent,
+        StoreModule.forRoot()
       ],
       providers: [
         provideRouter(routes), 
@@ -35,7 +36,7 @@ describe('EditComponent', () => {
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EditComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

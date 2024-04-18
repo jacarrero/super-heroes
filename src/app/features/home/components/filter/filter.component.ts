@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { FilterForm } from '../../core/models/filter-form.model';
-import { filterHeros, initDataHero } from '../../core/store/actions/heroes.actions';
+import { FilterForm } from '../../../../core/models/filter-form.model';
+import { filterHeros, initDataHero } from '../../../../core/store/actions/heroes.actions';
 
 @Component({
   selector: 'app-filter',

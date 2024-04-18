@@ -1,12 +1,16 @@
 import { Routes } from '@angular/router';
-import { CreateComponent } from './features/hero/create/create.component';
-import { EditComponent } from './features/hero/edit/edit.component';
 
 export const routes: Routes = [
     {
         path:'',
         loadChildren: () => import('./features/home/home.routes').then(m => m.HOME_ROUTES)
     },
-    { path: 'create', component: CreateComponent },
-    { path: 'edit/:id', component: EditComponent },
+    { 
+        path: 'create', 
+        loadChildren: () => import('./features/hero/create/create.routes').then(m => m.CREATE_ROUTES) 
+    },
+    { 
+        path: 'edit/:id', 
+        loadChildren: () => import('./features/hero/edit/edit.routes').then(m => m.EDIT_ROUTES) 
+    },
 ];
