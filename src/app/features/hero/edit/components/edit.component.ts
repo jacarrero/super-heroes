@@ -15,7 +15,7 @@ import { Store, select } from '@ngrx/store'
 import { Hero } from '../../../../core/models/hero.model'
 import { SnackbarService } from '../../../../core/services/snackbar/snackbar.service'
 import { editHero } from '../../../../core/store/actions/heroes.actions'
-import { State } from '../../../../core/store/reducers/heroes.reducer'
+import { Heroes } from '../../../../core/store/reducers/heroes.reducer'
 import { selectHeroById } from '../../../../core/store/selectors/heroes.selector'
 
 @Component({
@@ -40,7 +40,7 @@ export class EditComponent {
         private fb: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private store: Store<State>,
+        private store: Store<Heroes>,
         private snackbarService: SnackbarService
     ) {
         this.hero = undefined

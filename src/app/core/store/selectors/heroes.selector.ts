@@ -1,21 +1,21 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store'
 import { Hero } from '../../models/hero.model'
-import { State } from '../reducers/heroes.reducer'
+import { Heroes } from '../reducers/heroes.reducer'
 
-export const selectHeroesState = createFeatureSelector<State>('heroes')
+export const selectHeroesState = createFeatureSelector<Heroes>('heroes')
 
 export const selectHeroesData = createSelector(
     selectHeroesState,
     (heroesState) => heroesState.heroes
 )
 
-export const selectLoadingState = createFeatureSelector<State>('loading')
+export const selectLoadingState = createFeatureSelector<Heroes>('loading')
 export const selectLoading = createSelector(
     selectLoadingState,
     (heroesState) => heroesState.loading
 )
 
-export const selectDataLoadedState = createFeatureSelector<State>('dataLoaded')
+export const selectDataLoadedState = createFeatureSelector<Heroes>('dataLoaded')
 export const selectDataLoaded = createSelector(
     selectDataLoadedState,
     (heroesState) => heroesState.dataLoaded

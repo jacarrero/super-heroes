@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store'
 import { Hero } from '../../models/hero.model'
 import * as HeroesActions from '../actions/heroes.actions'
 
-export interface State {
+export interface Heroes {
     heroes: Hero[]
     originalDataHero: Hero[]
     loading: boolean
@@ -10,13 +10,15 @@ export interface State {
     error: any
 }
 
-const initialState: State = {
+const initialState: Heroes = {
     heroes: [],
     originalDataHero: [],
     loading: false,
     dataLoaded: false,
     error: null,
 }
+
+
 
 export const heroesReducer = createReducer(
     initialState,
@@ -86,3 +88,12 @@ export const heroesReducer = createReducer(
         ),
     }))
 )
+
+
+export const storeHeroes = {
+    heroes: heroesReducer,
+    originalDataHero: heroesReducer,
+    loading: heroesReducer,
+    dataLoaded: heroesReducer,
+    error: heroesReducer
+}
