@@ -1,38 +1,37 @@
 [
     {
-      "id": "1",
-      "name": "superman",
-      "age": 35,
-      "city": "Metropolis",
-      "fly": true
+        "id": "1",
+        "name": "superman",
+        "age": 35,
+        "city": "Metropolis",
+        "fly": true
     },
     {
-      "id": "2",
-      "name": "batman",
-      "age": 40,
-      "city": "Gotham City",
-      "fly": false
+        "id": "2",
+        "name": "batman",
+        "age": 40,
+        "city": "Gotham City",
+        "fly": false
     },
     {
-      "id": "3",
-      "name": "wonder Woman",
-      "age": 300,
-      "city": "Themyscira",
-      "fly": true
+        "id": "3",
+        "name": "wonder Woman",
+        "age": 300,
+        "city": "Themyscira",
+        "fly": true
     },
     {
-      "id": "4",
-      "name": "spider-Man",
-      "age": 25,
-      "city": "New York City",
-      "fly": false
+        "id": "4",
+        "name": "spider-Man",
+        "age": 25,
+        "city": "New York City",
+        "fly": false
     },
     {
-      "id": "5",
-      "name": "iron Man",
-      "age": 45,
-      "city": "Los Angeles",
-      "fly": true
+        "id": "5",
+        "name": "iron Man",
+        "age": 45,
+        "city": "Los Angeles",
+        "fly": true
     }
-  ]
-  
+]

@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import 'zone.js/testing';
-import { HeaderComponent } from './header.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import 'zone.js/testing'
+import { HeaderComponent } from './header.component'
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+    let component: HeaderComponent
+    let fixture: ComponentFixture<HeaderComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeaderComponent]
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [HeaderComponent],
+        }).compileComponents()
+
+        fixture = TestBed.createComponent(HeaderComponent)
+        component = fixture.componentInstance
+        fixture.detectChanges()
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    it('should create', () => {
+        expect(component).toBeTruthy()
+    })
+})
