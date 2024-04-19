@@ -1,29 +1,29 @@
-.filter{
+.filter {
     background-color: #fafafa;
-    .filter-fields{
+    .filter-fields {
         padding: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        .filter-field{
+        .filter-field {
             padding: 0.5rem;
         }
-        .filter-field.fly{
+        .filter-field.fly {
             display: flex;
             flex-direction: column;
         }
     }
-    .filter-buttons{
+    .filter-buttons {
         display: flex;
-        .right{
+        .right {
             width: 50%;
             display: flex;
             justify-content: center;
         }
-        .left{
+        .left {
             width: 50%;
         }
-        .filter-button{
+        .filter-button {
             margin: 1rem;
         }
     }

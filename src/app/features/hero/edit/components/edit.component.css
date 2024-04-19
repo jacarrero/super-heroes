@@ -1,14 +1,14 @@
 .edit {
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-  padding-bottom: 2rem;
-  padding-top: 3rem;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
 }
 
 .edit-button {
-  margin: 1rem;
+    margin: 1rem;
 }

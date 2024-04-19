@@ -8,7 +8,7 @@
         "test": "jest --maxWorkers 2",
         "test:watch": "jest --watch",
         "test:ci": "jest --runInBand",
-        "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+        "pretty": "prettier --write .",
         "start": "concurrently -r npm:pretty npm:serve:mocks npm:serve",
         "serve": "ng serve",
         "serve:mocks": "json-server --watch src/assets/mocks/heroes.json"

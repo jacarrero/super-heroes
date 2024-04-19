@@ -39,7 +39,7 @@ describe('CreateComponent', () => {
         expect(component).toBeTruthy()
     })
     /**
-     * EN ESTA VERSION DE ANGULAR EXISTE UN BUG AL RESETEAR EL FORMULARIO: 
+     * EN ESTA VERSION DE ANGULAR EXISTE UN BUG AL RESETEAR EL FORMULARIO:
      * https://github.com/angular/angular/issues/47027
      * TODO: Descomentar en cuanto se suba fix
      */

@@ -1,27 +1,35 @@
 <section class="filter">
-    <form [formGroup]="filterForm" class="filter-form" (ngSubmit)="search($event)">
+    <form
+        [formGroup]="filterForm"
+        class="filter-form"
+        (ngSubmit)="search($event)"
+    >
         <div class="filter-fields">
             <div class="filter-field">
-                <mat-form-field  appearance="outline">
+                <mat-form-field appearance="outline">
                     <mat-label>Nombre</mat-label>
-                    <input formControlName="name" matInput>
+                    <input formControlName="name" matInput />
                 </mat-form-field>
             </div>
             <div class="filter-field">
-                <mat-form-field  appearance="outline">
+                <mat-form-field appearance="outline">
                     <mat-label>Edad</mat-label>
-                    <input type="number" formControlName="age" matInput>
+                    <input type="number" formControlName="age" matInput />
                 </mat-form-field>
             </div>
             <div class="filter-field">
-                <mat-form-field  appearance="outline">
+                <mat-form-field appearance="outline">
                     <mat-label>Ciudad</mat-label>
-                    <input formControlName="city" matInput>
+                    <input formControlName="city" matInput />
                 </mat-form-field>
             </div>
             <div class="filter-field fly">
                 <mat-label for="fly">Vuela:</mat-label>
-                <mat-radio-group formControlName="fly" id="fly" appearance="outline">
+                <mat-radio-group
+                    formControlName="fly"
+                    id="fly"
+                    appearance="outline"
+                >
                     <mat-radio-button [value]="true">Si</mat-radio-button>
                     <mat-radio-button [value]="false">No</mat-radio-button>
                 </mat-radio-group>
@@ -29,11 +37,32 @@
         </div>
         <div class="filter-buttons">
             <div class="left">
-                <button class="filter-button" mat-raised-button color="primary" (click)="navigateToCreateHero()">Crear héroe</button>
+                <button
+                    class="filter-button"
+                    mat-raised-button
+                    color="primary"
+                    (click)="navigateToCreateHero()"
+                >
+                    Crear héroe
+                </button>
             </div>
             <div class="right">
-                <button class="filter-button" mat-flat-button color="warn" (click)="reset()">Limpiar</button>
-                <button class="filter-button" mat-raised-button color="primary" type="submit">Buscar</button>
+                <button
+                    class="filter-button"
+                    mat-flat-button
+                    color="warn"
+                    (click)="reset()"
+                >
+                    Limpiar
+                </button>
+                <button
+                    class="filter-button"
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                >
+                    Buscar
+                </button>
             </div>
         </div>
     </form>
