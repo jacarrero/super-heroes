@@ -9,7 +9,7 @@
         "test:watch": "jest --watch",
         "test:ci": "jest --runInBand",
         "pretty": "prettier --write .",
-        "start": "concurrently -r npm:pretty npm:serve:mocks npm:serve",
+        "start": "concurrently -r npm:serve:mocks npm:serve",
         "serve": "ng serve",
         "serve:mocks": "json-server --watch src/assets/mocks/heroes.json"
     },
