@@ -56,7 +56,7 @@ export class DashboardComponent {
 
     ngOnInit(): void {
         this.store.dispatch(loadHeroesData())
-        this.heroes$.subscribe((data) => (this.dataSource.data = [...data]));
+        this.heroes$.subscribe((data) => (this.dataSource.data = [...data]))
     }
 
     openDeleteHeroDialog(hero: Hero) {
@@ -67,7 +67,7 @@ export class DashboardComponent {
             .afterClosed()
             .subscribe((confirm: Boolean) => {
                 if (confirm) {
-                    this.store.dispatch(deleteHero({ id: hero.id }))
+                    this.store.dispatch(deleteHero({ id: hero.id as string }))
                 } else {
                     this.dialog.closeAll()
                 }

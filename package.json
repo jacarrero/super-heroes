@@ -5,13 +5,13 @@
         "ng": "ng",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "jest",
+        "test": "jest --maxWorkers 2",
         "test:watch": "jest --watch",
         "test:ci": "jest --runInBand",
         "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
         "start": "concurrently -r npm:pretty npm:serve:mocks npm:serve",
         "serve": "ng serve",
-        "serve:mocks": "json-server src/assets/mocks/heroes.json"
+        "serve:mocks": "json-server --watch src/assets/mocks/heroes.json"
     },
     "private": true,
     "dependencies": {

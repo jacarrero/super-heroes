@@ -28,7 +28,7 @@ Comando`npm run build` para hacer la build del proyecto.
 
 ## Test Unitarios
 
-Comando `ng test` para ejecutar los test [JEST](https://jestjs.io/).
+Comando `npm test` para ejecutar los test [JEST](https://jestjs.io/).
 El componente "create" es el componente que contiene los test al completo.
 
 # Autor

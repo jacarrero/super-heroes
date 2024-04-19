@@ -85,6 +85,12 @@ export class CreateComponent {
     }
 
     resetCreateForm() {
-        this.createForm.reset()
+        this.createForm.reset({
+            id: undefined,
+            name: undefined,
+            age: undefined,
+            city: undefined,
+            fly: undefined,
+        })
     }
 }

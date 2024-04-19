@@ -1,8 +1,8 @@
-import { createAction, props } from '@ngrx/store';
-import { FilterFormValue } from '../../models/filter-form.model';
-import { Hero } from '../../models/hero.model';
+import { createAction, props } from '@ngrx/store'
+import { FilterFormValue } from '../../models/filter-form.model'
+import { Hero } from '../../models/hero.model'
 
-export const initState = createAction('[Heroes] Init Heroes');
+export const initState = createAction('[Heroes] Init Heroes')
 export const loadHeroesData = createAction('[Heroes] Load Heroes')
 export const loadHeroesSuccess = createAction(
     '[Heroes] Load Heroes Success',

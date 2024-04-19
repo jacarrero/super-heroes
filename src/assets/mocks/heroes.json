@@ -2,7 +2,7 @@
   "heroes": [
     {
       "id": "2",
-      "name": "BATMAN MAN",
+      "name": "BATMAN",
       "age": 40,
       "city": "Gotham City",
       "fly": false

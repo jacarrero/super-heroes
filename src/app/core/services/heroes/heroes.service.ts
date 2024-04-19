@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, map } from 'rxjs'
-import { v4 as uuidv4 } from 'uuid'
 import { FilterForm } from '../../models/filter-form.model'
 import { Hero } from '../../models/hero.model'
 
@@ -54,8 +53,12 @@ export class HeroesService {
     }
 
     createHero(hero: Hero): Observable<Hero> {
-        const newId = uuidv4()
-        const newHero: Hero = { ...hero, id: newId }
+        const newHero: Hero = {
+            name: hero.name,
+            age: hero.age,
+            city: hero.city,
+            fly: hero.fly,
+        }
         return this.http.post<Hero>(this.mocksUrl, newHero)
     }
 

@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store'
 import { FilterForm } from '../../../../core/models/filter-form.model'
 import {
     filterHeros,
-    loadHeroesData
+    loadHeroesData,
 } from '../../../../core/store/actions/heroes.actions'
 
 @Component({
@@ -51,7 +51,7 @@ export class FilterComponent {
     }
 
     reset() {
-        this.filterForm.reset();
-        this.store.dispatch(loadHeroesData());
+        this.filterForm.reset()
+        this.store.dispatch(loadHeroesData())
     }
 }

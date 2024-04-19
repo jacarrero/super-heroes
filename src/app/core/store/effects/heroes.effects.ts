@@ -46,7 +46,6 @@ export class HeroesEffects {
             ),
             tap(() => {
                 this.router.navigate(['/'])
-                this.loadHeroesData$;
                 return of(
                     this.snackbarService.openSnackbar(
                         'Héroe creado exitosamente',
@@ -85,7 +84,7 @@ export class HeroesEffects {
         this.actions$.pipe(
             ofType(HeroesActions.editHero),
             mergeMap(({ hero }) =>
-                this.heroesService.editHero(hero.id, hero).pipe(
+                this.heroesService.editHero(hero.id as string, hero).pipe(
                     map((updatedHero) =>
                         HeroesActions.editHeroSuccess({ hero: updatedHero })
                     ),

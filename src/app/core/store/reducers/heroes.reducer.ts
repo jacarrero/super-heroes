@@ -46,25 +46,26 @@ export const heroesReducer = createReducer(
         ...state,
         heroes: Object.values(filterForm).every((value) => value === null)
             ? state.heroes
-            : [...state.heroes.filter((hero) => {
-                  return (
-                      (filterForm?.name &&
-                          hero.name
-                              .toLocaleLowerCase()
-                              .includes(
-                                  filterForm.name.toLowerCase() as string
-                              )) ||
-                      (filterForm?.age && hero.age === filterForm.age) ||
-                      (filterForm?.city &&
-                          hero.city
-                              .toLowerCase()
-                              .includes(
-                                  (filterForm.city as string).toLowerCase()
-                              )) ||
-                      hero.fly === filterForm.fly
-                  )
-              })],
-        loading: false,
+            : [
+                  ...state.heroes.filter((hero) => {
+                      return (
+                          (filterForm?.name &&
+                              hero.name
+                                  .toLocaleLowerCase()
+                                  .includes(
+                                      filterForm.name.toLowerCase() as string
+                                  )) ||
+                          (filterForm?.age && hero.age === filterForm.age) ||
+                          (filterForm?.city &&
+                              hero.city
+                                  .toLowerCase()
+                                  .includes(
+                                      (filterForm.city as string).toLowerCase()
+                                  )) ||
+                          hero.fly === filterForm.fly
+                      )
+                  }),
+              ],
     })),
     on(HeroesActions.createHero, (state, { hero }) => ({
         ...state,
