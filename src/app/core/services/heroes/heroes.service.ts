@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, map } from 'rxjs'
+import { environment } from '../../../../environments/environment'
 import { FilterForm } from '../../models/filter-form.model'
 import { Hero } from '../../models/hero.model'
 
@@ -8,7 +9,7 @@ import { Hero } from '../../models/hero.model'
     providedIn: 'root',
 })
 export class HeroesService {
-    private mocksUrl = 'http://localhost:3000/heroes'
+    private mocksUrl = environment.baseUrl;
 
     constructor(private http: HttpClient) {}
 
