@@ -9,7 +9,7 @@ import { Hero } from '../../models/hero.model'
     providedIn: 'root',
 })
 export class HeroesService {
-    private mocksUrl = environment.baseUrl;
+    private mocksUrl = environment.baseUrl
 
     constructor(private http: HttpClient) {}
 

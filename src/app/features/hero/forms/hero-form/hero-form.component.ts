@@ -58,8 +58,8 @@ export class HeroFormComponent implements OnInit {
             validators: [Validators.required],
         }),
     })
-    
-    @Input() type: FormType;
+
+    @Input() type: FormType
 
     constructor(
         private snackbarService: SnackbarService,
@@ -67,7 +67,7 @@ export class HeroFormComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router
     ) {
-        this.type = FormType.NOT_INIT;
+        this.type = FormType.NOT_INIT
     }
 
     ngOnInit() {
