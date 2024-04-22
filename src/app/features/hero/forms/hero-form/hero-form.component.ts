@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import {
     FormControl,
     FormGroup,
@@ -58,17 +58,20 @@ export class HeroFormComponent implements OnInit {
             validators: [Validators.required],
         }),
     })
-    readonly type = input.required<FormType>()
+    
+    @Input() type: FormType;
 
     constructor(
         private snackbarService: SnackbarService,
         private store: Store<Heroes>,
         private route: ActivatedRoute,
         private router: Router
-    ) {}
+    ) {
+        this.type = FormType.NOT_INIT;
+    }
 
     ngOnInit() {
-        if (this.type() === this.formType.EDIT) {
+        if (this.type === this.formType.EDIT) {
             const heroId = this.route.snapshot.params['id']
             this.store
                 .pipe(select(selectHeroById(heroId)))
@@ -83,7 +86,7 @@ export class HeroFormComponent implements OnInit {
     onSubmit(ev: Event) {
         const formValue: Hero = this.heroForm.getRawValue()
         if (this.heroForm.valid) {
-            switch (this.type()) {
+            switch (this.type) {
                 case this.formType.EDIT:
                     this.store.dispatch(editHero({ hero: formValue }))
                     break

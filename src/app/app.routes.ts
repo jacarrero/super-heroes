@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router'
+import { FormType } from './core/models/form-type.enum'
 
 export const routes: Routes = [
     {
@@ -8,16 +9,18 @@ export const routes: Routes = [
     },
     {
         path: 'create',
+        data: { type: FormType.CREATE },
         loadChildren: () =>
-            import('./features/hero/create/create.routes').then(
-                (m) => m.CREATE_ROUTES
+            import('./features/hero/forms/hero-form.routes').then(
+                (m) => m.HERO_FORM_ROUTES
             ),
     },
     {
         path: 'edit/:id',
+        data: { type: FormType.EDIT },
         loadChildren: () =>
-            import('./features/hero/edit/edit.routes').then(
-                (m) => m.EDIT_ROUTES
+            import('./features/hero/forms/hero-form.routes').then(
+                (m) => m.HERO_FORM_ROUTES
             ),
     },
 ]

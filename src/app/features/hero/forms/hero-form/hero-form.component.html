@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="form-buttons">
-        @if (type() === formType.CREATE) {
+        @if (type === formType.CREATE) {
             <button
                 class="form-button"
                 mat-flat-button
@@ -51,9 +51,9 @@
             class="form-button"
             type="submit"
         >
-            @if (type() === formType.CREATE) {
+            @if (type === formType.CREATE) {
                 Crear
-            } @else if (type() === formType.EDIT) {
+            } @else if (type === formType.EDIT) {
                 Modificar
             }
         </button>
